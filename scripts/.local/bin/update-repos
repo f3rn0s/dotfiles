@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+COUNTRY=$(curl -s ipinfo.io | jq -r ".country")
+reflector --verbose --country $COUNTRY -l 25 --sort rate --save /etc/pacman.d/mirrorlist

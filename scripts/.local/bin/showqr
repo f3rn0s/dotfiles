@@ -1,0 +1,6 @@
+#!/bin/bash
+
+filename=/tmp/qropen-$(date +Y%m%d-%H%M).png
+xclip -o -sel clip | qrencode -s 6 -l H -o $filename
+sxiv $filename
+rm $filename

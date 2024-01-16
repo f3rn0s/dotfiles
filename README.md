@@ -10,3 +10,9 @@ stow zsh
 
 # etc...
 ```
+
+To quickly load in all dotfiles:
+
+```bash
+stow $(ls -d)
+```
