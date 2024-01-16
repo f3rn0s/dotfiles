@@ -1,0 +1,19 @@
+configuration {
+	modi: "window,run,ssh,drun,combi";
+	width: 50;
+	lines: 15;
+	columns: 1;
+	bw: 2;
+	location: 0;
+	padding: 10;
+	fixed-num-lines: false;
+	ssh-client: "ssh";
+	hide-scrollbar: true;
+	color-normal: "#263238,#ffffff,#263238,#37474f,#ffffff";
+	color-urgent: "#263238,#f36c60,#263238,#f36c60,#263238";
+	color-active: "#263238,#4dd0e1,#263238,#4dd0e1,#263238";
+	color-window: "#263238,#1c1f26,#37474f";
+        terminal: "/usr/bin/alacritty";
+}
+
+@theme "theme.rasi"
