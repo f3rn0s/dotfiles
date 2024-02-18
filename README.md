@@ -14,5 +14,6 @@ stow zsh
 To quickly load in all dotfiles:
 
 ```bash
-stow $(ls -d)
+for i in $(ls -d */); do stow --adopt $i; done
+git reset --hard
 ```
