@@ -40,21 +40,27 @@ FZF_CTRL_T_COMMAND='fd --type f --hidden --exclude .git --exclude .cache'
 FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
 
 source ~/.zplug/init.zsh
-
-zplug "plugins/git", from:oh-my-zsh
-zplug "lib/history", from:oh-my-zsh
-
-zplug "junegunn/fzf", use:"shell/*.zsh"
-
-zplug "zsh-users/zsh-completions"
-#zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-history-substring-search", defer:2
-
-zplug "woefe/git-prompt.zsh", use:"git-prompt.zsh"
-# We must call this second so that git-prompt can have a chance to initalize
-zplug "~/.zsh", from:local, use:"classyTouch.zsh-theme", defer:3
-
+  # needed for the newest version of plugins/git
+  zplug "lib/async_prompt", from:oh-my-zsh
+  zplug "plugins/git", from:oh-my-zsh, defer:1
+  zplug "lib/history", from:oh-my-zsh
+  zplug "junegunn/fzf", use:"shell/*.zsh"
+  zplug "zsh-users/zsh-completions"
+  #zplug "zsh-users/zsh-syntax-highlighting", defer:2
+  zplug "zsh-users/zsh-history-substring-search", defer:2
+  zplug "woefe/git-prompt.zsh", use:"git-prompt.zsh"
+  # We must call this second so that git-prompt can have a chance to initalize
+  zplug "~/.zsh", from:local, use:"classyTouch.zsh-theme", defer:3
 zplug load
+
+ip() {
+    if [ ! -n "$1" ]
+    then
+        command ip -c -br a
+    else
+        command ip -c $@
+    fi
+}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -65,3 +71,4 @@ typeset -Ag bright_color fg_bright_bold
 if [ -f /usr/bin/mise ]; then
     eval "$(/usr/bin/mise activate zsh)"
 fi
+
