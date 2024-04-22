@@ -62,4 +62,6 @@ autoload colors && colors
 
 typeset -Ag bright_color fg_bright_bold
 
-eval "$(/usr/bin/rtx activate zsh)"
+if [ -f /usr/bin/mise ]; then
+    eval "$(/usr/bin/mise activate zsh)"
+fi
