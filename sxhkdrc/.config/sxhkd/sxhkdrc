@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	alacritty
+	wezterm
 
 super + shift + Return
         alacritty --command /usr/bin/sudo -E /home/f3rn0s/.local/bin/exegol start
@@ -151,7 +151,7 @@ XF86AudioMute
         pactl set-sink-mute 0 toggle
 
 XF86MonBrightness{Up,Down}
-    brightnessctl s 10%{+,-}
+        brightnessctl s 10%{+,-}
 
 super + {equal,minus}
         bspc config window_gap $(( $(bspc config window_gap) {+,-} 5 ))
@@ -173,3 +173,6 @@ super + n
 
 Print
         flameshot gui
+
+super + z
+        xrandr --output eDP1 --mode 1920x1200 --primary

@@ -1,0 +1,33 @@
+[colors]
+ansi = [
+    "#000D18",
+    "#A55C54",
+    "#D66850",
+    "#C48C6B",
+    "#977981",
+    "#F39C71",
+    "#977981",
+    "#F7AC86",
+]
+background = "#01131b"
+brights = [
+    "#666666",
+    "#A55C54",
+    "#D66850",
+    "#C48C6B",
+    "#F39C71",
+    "#F39C71",
+    "#DFAF8F",
+    "#F39C71",
+]
+cursor_bg = "#F7AC86"
+cursor_border = "#F7AC86"
+cursor_fg = "#F7AC86"
+foreground = "#F7AC86"
+selection_bg = "#a5a2a2"
+selection_fg = "#090300"
+
+[metadata]
+aliases = ["f3rn0s theme"]
+author = "f3rn0s (https://github.com/f3rn0s)"
+name = "f3rn0s theme"

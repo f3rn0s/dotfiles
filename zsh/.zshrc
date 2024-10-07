@@ -8,7 +8,11 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export GPG_TTY=$(tty)
 
 HISTFILE=~/.zsh_history
-HISTSIZE=SAVEHIST=1000000000
+HISTSIZE=10000000
+SAVEHIST=10000000
+setopt appendhistory
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
 
 bindkey -e
 
@@ -30,8 +34,10 @@ bindkey "^[[1;5D" backward-word
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export TERM=xterm
 source $HOME/.cargo/env
-export EDITOR=vim
+export EDITOR=nvim
 
+alias vim='nvim'
+alias sxiv='nsxiv'
 alias ls='ls -N --color=tty'
 alias exegol='sudo -E /home/f3rn0s/.local/bin/exegol'
 alias tailscaledns="tailscale status | awk -F' ' '{print \$2\".turtle-vibe.ts.net\"}'"
@@ -72,3 +78,4 @@ if [ -f /usr/bin/mise ]; then
     eval "$(/usr/bin/mise activate zsh)"
 fi
 
+eval "$(atuin init zsh --disable-up-arrow)"

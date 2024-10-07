@@ -1,0 +1,5 @@
+require('plugin_configs.ministarter_config')
+require('plugin_configs.cokeline_config')
+require('plugin_configs.treesitter_config')
+require('plugin_configs.overseer_config')
+require('plugin_configs.notify_config')

@@ -49,4 +49,5 @@ feh --randomize --bg-fill "$HOME/Pictures/Wallpaper/"
 check_process "redshift"
 [ $? -eq 0 ] && redshift
 
-xinput set-button-map 10 1 1 3 4 5 6 7
+check_process "parcellite"
+[ $? -eq 0 ] && parcellite --no-icon
