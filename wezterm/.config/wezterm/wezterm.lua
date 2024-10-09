@@ -4,17 +4,25 @@ local config = wezterm.config_builder()
 
 config.hyperlink_rules = wezterm.default_hyperlink_rules()
 
+-- I want words to end in ';,:' and that's not in the default
+config.selection_word_boundary = " \t\n{}[]()\"'`:;,"
+
+-- I don't like confirmations
+config.window_close_confirmation = 'NeverPrompt'
+
+-- My theme <3
 config.color_scheme = 'f3rn0s theme'
 
+-- Tabs are overrated
 config.enable_tab_bar = false
 
+-- Font features go brrr
 config.font = wezterm.font({ 
     family = "Fira Code",
     harfbuzz_features = { 'ss03', 'cv30', 'ss08', 'calt=0', 'clig=0', 'liga=0' }
 })
+
 config.bold_brightens_ansi_colors = "BrightAndBold"
-
-
 
 config.font_rules = {
   {
@@ -34,6 +42,7 @@ config.font_rules = {
   },
 }
 
+-- I want links to be all cool and hip
 config.mouse_bindings = {
   -- Change the default click behavior so that it only selects
   -- text and doesn't open hyperlinks
